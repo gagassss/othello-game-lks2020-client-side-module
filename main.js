@@ -31,8 +31,11 @@ function updateScore() {
     document.getElementById('black-score').innerHTML = document.getElementsByClassName('black').length 
 }
 
-function checkThatDisc(user) {
-    if (player == )
+function checkThoseDisc() {
+    "use strict";
+    Array.from(document.getElementsByClassName("white")).forEach(function(item) {
+       console.log(item);
+    });
 }
 
 function selectCell(row, col) {
@@ -48,12 +51,11 @@ function selectCell(row, col) {
             document.getElementById('turn').innerHTML = 'white'
         }
         schema[row][col] = player
-        document.getElementById('cell'+row+col).innerHTML = '<div class="disc '+disc+'"></div>'
+        document.getElementById('cell'+row+col).innerHTML = '<div data-cord="" class="disc '+disc+'"></div>'
     } 
     updateScore()
 }
 
-checkThatDisc(document.getElementById('turn').innerHTML)
-
 whenStart()
 updateScore()
+checkThoseDisc()
